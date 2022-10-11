@@ -1,0 +1,57 @@
+body{
+    background-color: #e3e6dc
+}
+
+.navbar-nav{
+    font-family: 'Lobster', cursive;
+}
+
+a{
+    text-decoration: none;
+    color: #cf6d1c;
+}
+
+a:hover{
+    color: aliceblue;
+}
+
+.navbar-brand{
+    padding-top:100px; 
+    color: azure;
+    background-color: #38aa41; 
+    position: absolute;
+    padding: 25px 10px 10px 10px;
+    border-radius: 10%;
+    font-family: 'Lobster', cursive;
+}
+
+.jumbotron{
+    background-image: url("img/cake.jpg");
+    height: 700px;
+    background-size: cover;
+    color: azure;
+    font-family: 'Lobster', cursive;
+    border-radius: 0% !important;
+}
+
+.jumbotron .container{
+    margin: 130px;
+}
+
+.jumbotron .btn-jumbotron{
+    color: azure;
+    background-color: #38aa41;
+}
+
+.card:hover{
+    cursor: pointer;
+    transform: translateY(-10px);
+    transition: all .3s;
+    box-shadow: 4px -5px 13px 1px rgba(0,0,0,0.5);
+}
+
+.contact{
+    margin-top: 100px;
+    min-height: 200px;
+    background-color: #696752;
+}
