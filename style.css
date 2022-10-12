@@ -1,5 +1,11 @@
 body{
-    background-color: #e3e6dc
+    background-color: #e3e6dc;
+
+    
+}
+
+ul li{
+    text-decoration: none;
 }
 
 .navbar-nav{
@@ -12,7 +18,7 @@ a{
 }
 
 a:hover{
-    color: aliceblue;
+    color: azure;
 }
 
 .navbar-brand{
@@ -54,4 +60,18 @@ a:hover{
     margin-top: 100px;
     min-height: 200px;
     background-color: #696752;
+}
+
+
+.contact{
+    font-size: .8rem;
+    color: azure;
+}
+
+ul hr{
+    width: 30px;
+}
+
+li i{
+    color: azure;
 }
