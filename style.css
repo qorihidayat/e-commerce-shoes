@@ -14,12 +14,33 @@ ul li{
 
 a{
     text-decoration: none;
-    color: #cf6d1c;
+    color: #242323;
 }
 
 a:hover{
-    color: azure;
+    color: #242323;
 }
+
+.harga{
+    text-decoration: none;
+    color: #cf6d1c;
+}
+
+.harga:hover{
+    color: #db8b4a;
+}
+
+.h1{
+    font-family: 'Secular One', sans-serif;
+    font-weight: bold;
+}
+
+.card-text{
+    font-family: 'Lobster', cursive;
+}
+
+
+
 
 .navbar-brand{
     padding-top:100px; 
@@ -29,6 +50,11 @@ a:hover{
     padding: 25px 10px 10px 10px;
     border-radius: 10%;
     font-family: 'Lobster', cursive;
+}
+
+.navbar-brand:hover{
+    transform: translateY(10px);
+    transition: all .3s;
 }
 
 .jumbotron{
@@ -47,6 +73,12 @@ a:hover{
 .jumbotron .btn-jumbotron{
     color: azure;
     background-color: #38aa41;
+}
+
+.btn-jumbotron:hover{
+    transform: translateY(-5px);
+    transition: all .3s;
+    box-shadow: 4px -5px 13px 1px rgba(170, 168, 168, 0.5);
 }
 
 .card:hover{
@@ -74,4 +106,12 @@ ul hr{
 
 li i{
     color: azure;
+}
+
+li{
+    font-family: 'Secular One', sans-serif;
+}
+
+ul p{
+    font-family: 'Secular One', sans-serif;
 }

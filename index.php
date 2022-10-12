@@ -1,0 +1,227 @@
+<?php
+$conn = mysqli_connect("localhost", "root", "", "cookies");
+$result = mysqli_query($conn, "SELECT * FROM produk");
+?>
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kelompok 1</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">KELOMPOK 1</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <!-- <div class="navbar-nav" style="margin-left: auto;">
+            <a class="nav-link active" href="#">FEATURED</a>
+            <a class="nav-link active" href="#">PRODUCT</a>
+            <a class="nav-link active" href="#">HELP</a>
+          </div> -->
+      </div>
+    </div>
+  </nav>
+  <!-- ----------JUMBOTRON----------- -->
+  <div class="p-5 mb-4 bg-light rounded-3 jumbotron">
+    <div class="container-fluid py-5">
+      <div class="container">
+        <h1 class="display-5 fw-bold">Brownies Cake Latine</h1>
+        <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in
+          previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your
+          liking.</p>
+        <button class="btn btn-lg btn-jumbotron" type="button">Buy Now ></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ----------FEATURE/PRODUCT-------------------- -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <center>
+          <div class="h1">FEATURED PRODUCT</div>
+        </center>
+      </div>
+      <!-- <div class="col-md-12">
+
+                    <div class="form-check">
+                        <div class="row mx-auto" style="width: 15rem;">
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">RED</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">RED</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">BLUE</label>
+                        </div>
+                        </div>
+                     </div>
+
+            </div> -->
+    </div>
+    <br>
+
+    <!-- ----------------ROW PRODUCT 1----------------- -->
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+      <?php while ($produk = mysqli_fetch_assoc($result)) : ?>
+        <div class="col">
+          <a href="payment/form.php?id=<?php echo $produk["id"]; ?>">
+            <div class="card bg-transparent d-flex" style="width: 14rem;">
+              <center>
+                <img src="img/<?php echo $produk["gambar"] ?>" class="card-img-top" alt="..." style="height: 150px; width: 150px;">
+              </center>
+              <div class="card-body">
+                <p class="card-text d-flex justify-content-center fw-bold"><?php echo $produk["nama"] ?></p>
+                <hr>
+                <a href="payment/form.php?id=<?php echo $produk["id"]; ?>" class="d-flex justify-content-center fw-bold harga">Rp. <?php echo $produk["harga"] ?></a>
+              </div>
+            </div>
+          </a>
+        </div>
+      <?php endwhile; ?>
+    </div>
+
+    <!-- ---------ROW 2-------------------- -->
+    <div class="row my-3">
+      <div class="col-md-7">
+        <a href="payment/form.php?id=C002">
+          <div class="card py-4 bg-transparent">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <h1 class="card-text fw-bold">This Season's Must Have</h1>
+                  <hr>
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident, ipsum!</p>
+                  <button class="btn btn-success btn-lg btn-jumbotron" type="button">BUY NOW</button>
+                </div>
+                <div class="col-md-6">
+                  <img src="img/cake2.png" class="card-img-top" alt="..." style="height: 300px;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-5">
+        <a href="payment/form.php?id=C003">
+          <div class="card py-4 bg-transparent">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6">
+                  <h1 class="card-text fw-bold">White Cruch Cake</h1>
+                  <hr>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                  <button class="btn btn-success btn-lg btn-jumbotron" type="button">BUY NOW</button>
+                </div>
+                <div class="col-md-6">
+                  <img src="img/cake3.png" class="card-img-top" alt="..." style="height: 300px;">
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- 
+            ------CONTACT US--------------- -->
+  <section class="contact">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-3">
+          <ul>
+            <li>PERSONAL INFO</li>
+            <hr>
+            <li>CONTACT</li>
+            <li>ADDRESS</li>
+            <li>PIC PRODUCT</li>
+            <li>PERSON</li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <ul>
+            <li>PERSONAL INFO</li>
+            <hr>
+            <li>CONTACT</li>
+            <li>ADDRESS</li>
+            <li>PIC PRODUCT</li>
+            <li>PERSON</li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <ul>
+            <li>PERSONAL INFO</li>
+            <hr>
+            <li>
+              <a href="https://www.facebook.com">
+                <i class="bi bi-facebook"></i>
+            </li>
+            </a>
+            <li>
+              <a href="https://www.instagram.com">
+                <i class="bi bi-instagram"></i>
+            </li>
+            </a>
+            <li>
+              <a href="https://www.twitter.com">
+                <i class="bi bi-twitter"></i>
+            </li>
+            </a>
+            <li>
+              <a href="https://www.youtube.com">
+                <i class="bi bi-youtube"></i>
+            </li>
+            </a>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <ul>
+            <li>PERSONAL INFO</li>
+            <hr>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, corrupti?</p>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Subscribe" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <button class="btn bg-danger" type="button" id="button-addon2"><i class="bi bi-send"></i></button>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
+
+<!-- note wa -->
+<!-- https://wa.me/1XXXXXXXXXX?text=I'm%20interested%20in%20your%20car%20for%20sale -->
